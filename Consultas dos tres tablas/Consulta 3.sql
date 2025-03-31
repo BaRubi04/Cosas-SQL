@@ -1,0 +1,1 @@
+insert into jesuita(codigo,nombre,nombreAlumno,firma,firmaIngles) values('77777','Benito Viñes','Aitor','Vive y deja vivir','Live and let live');
