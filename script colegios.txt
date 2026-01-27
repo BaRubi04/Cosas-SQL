@@ -1,0 +1,61 @@
+create table colegios(
+	idColegio smallint primary key,
+	nombre varchar(100) not null,
+	persona_contacto varchar(100) not null,
+	tfno_contacto char(10) unique
+);
+
+insert into colegios values
+	(0,'plazas disponibles','no procede','no procede');
+
+create table colegios_actividades(
+	idReserva smallint primary key identity,
+	idColegio smallint not null default 0,
+	idCharla smallint null,
+	fecha smalldatetime not null,
+	numero_asistentes smallint not null,
+	constraint FK_idColegio foreign key (idColegio) references colegios(idColegio)
+	on delete cascade,
+	constraint FK_idCharlas foreign key (idCharla) references charlas(idCharlas)
+	on delete no action
+);
+
+create table pruebas(
+	idPrueba tinyint primary key identity,
+	experimento varchar(200) not null,
+	resultado varchar(200) not null
+);
+
+-- inserción filas adicionales en tabla colegios
+
+insert into colegios values
+	(1,'colegio_tabasco','Maria Del Carmen','756657775'),
+	(2,'colegio_bravo','Jose Maria De Los Santos Dolores','161484666');
+
+-- inserción filas en tabla hijo (actividades_colegio)
+
+insert into colegios_actividades values
+	(0,8,'2025-02-14 09:30:00',500),
+	(0,9,'2025-05-22 14:15:45',299),
+	(1,9,'2025-07-04 20:00:10',198),
+	(1,10,'2025-09-12 08:45:30',397),
+	(2,10,'2025-11-30 18:20:00',496),
+	(2,8,'2025-12-25 12:00:00',32);
+-- La conversión del tipo de datos varchar en smalldatetime produjo un valor fuera de intervalo.
+-- Solución? Poner el formato a dia mes año (estaba viendo el 14, 22, 30 y 25 como meses y por eso dice que se sale del intervalo)
+
+set dateformat 'dmy'; 
+insert into colegios_actividades values
+	(0,8,'14-02-2025 09:30:00',500),
+    (0,9,'22-05-2025 14:15:45',299),
+    (1,9,'04-07-2025 20:00:10',198),
+    (1,10,'12-09-2025 08:45:30',397),
+    (2,10,'30-11-2025 18:20:00',496),
+    (2,8,'25-12-2025 12:00:00',32);
+
+insert into pruebas values
+	('delete from colegios where idColegio = 1;','En actividades_colegio, las filas con idColegio = 1 han sido eliminadas'),
+	('delete from charlas where idCharlas = 8;','No deja, porque hay una fila hija');
+	
+	
+	
