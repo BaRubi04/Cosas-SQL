@@ -10,6 +10,14 @@ create table usuarios(
 
 );
 
+create table lugares(
+
+ 	idLugar tinyint primary key identity,
+
+ 	nombre varchar(50) not null
+
+);
+
 create table charlas(
 
  	idCharlas smallint primary key identity,
@@ -25,14 +33,6 @@ create table charlas(
  	constraint CK\_descripcion check(puntuacion\_media between 1 and 10)
 
  	constraint FK\_idLugar foreign key (idLugar) references lugares(idLugar)
-
-);
-
-create table lugares(
-
- 	idLugar tinyint primary key identity,
-
- 	nombre varchar(50) not null
 
 );
 
@@ -177,6 +177,7 @@ insert into ponentes\_charlas values
 
 
 &nbsp;	
+
 
 
 
