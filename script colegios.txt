@@ -15,9 +15,9 @@ create table colegios_actividades(
 	fecha smalldatetime not null,
 	numero_asistentes smallint not null,
 	constraint FK_idColegio foreign key (idColegio) references colegios(idColegio)
-	on delete cascade,
+	on delete cascade, -- on delete set default
 	constraint FK_idCharlas foreign key (idCharla) references charlas(idCharlas)
-	on delete no action
+	on delete no action -- on delete set null
 );
 
 create table pruebas(
@@ -59,3 +59,4 @@ insert into pruebas values
 	
 	
 	
+
