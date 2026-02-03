@@ -116,19 +116,19 @@ insert into ponentes values
 
  	('Gustavo','666666666',5),  -- Identity pone automáticamente 1
 
- 	('Melquiades','777666777'), -- Sin pago explícito, pone 1 por defecto
+ 	('Melquiades','777666777'); -- Sin pago explícito, pone 1 por defecto
 
 -- \[poner (nombre,telefono) tras el nombre de la tabla para que deje omitir el pago]
 
 
 
- 	('Manolo','666666666',10), -- No deja, teléfono está repetido
+ 	-- ('Manolo','666666666',10), No deja, teléfono está repetido
 
 -- \[Infracción de la restricción UNIQUE KEY 'UQ\_\_ponentes\_\_2A16D9455F545524'. No se puede insertar una clave duplicada en el objeto 'dbo.ponentes'. El valor de la clave duplicada es (666666666).]
 
  
 
- 	('Gamer300','918273645',0); -- No deja, pago no es mayor que 0
+ 	-- ('Gamer300','918273645',0); No deja, pago no es mayor que 0
 
 -- \[Instrucción INSERT en conflicto con la restricción CHECK 'CK\_pago'. El conflicto ha aparecido en la base de datos 'Potencia\_Digital\_SQL', tabla 'dbo.ponentes', column 'pago'.]
 
@@ -150,9 +150,9 @@ insert into charlas values
 
 &nbsp;	('charla1',5,'charla guay',1),
 
-&nbsp;	('charla2',7,'charla interesante',2),
+&nbsp;	('charla2',7,'charla interesante',2);
 
-&nbsp;	('charla3',9,'charla ciberseguridad',4);  -- No deja porque idLugar 4 no existe (después pondré 3 en vez de 4)
+&nbsp;	-- ('charla3',9,'charla ciberseguridad',4);  No deja porque idLugar 4 no existe (después pondré 3 en vez de 4)
 
 -- \[Instrucción INSERT en conflicto con la restricción FOREIGN KEY 'FK\_idLugar'. El conflicto ha aparecido en la base de datos 'Potencia\_Digital\_SQL', tabla 'dbo.lugares', column 'idLugar'.]
 
@@ -160,9 +160,9 @@ insert into charlas values
 
 insert into ponentes\_charlas values
 
-&nbsp;	(1,8), -- 8 porque ya hice pruebas con filas anteriores que borré y tal y ahí se quedó el autocontador. Fila válida.
+&nbsp;	(1,8); -- 8 porque ya hice pruebas con filas anteriores que borré y tal y ahí se quedó el autocontador. Fila válida.
 
-&nbsp;	(1,1), -- No válida, no existe idCharlas "1"
+&nbsp;	-- (1,1),  No válida, no existe idCharlas "1"
 
 -- \[Instrucción INSERT en conflicto con la restricción FOREIGN KEY 'FK\_idCharla2'. El conflicto ha aparecido en la base de datos 'Potencia\_Digital\_SQL', tabla 'dbo.charlas', column 'idCharlas'.]
 
@@ -170,16 +170,6 @@ insert into ponentes\_charlas values
 
 &nbsp;	(2,8),
 
-&nbsp;	(3,8); -- Error, no existe idPonente 3
+&nbsp;	-- (3,8); Error, no existe idPonente 3
 
 -- \[Instrucción INSERT en conflicto con la restricción FOREIGN KEY 'FK\_idPonente'. El conflicto ha aparecido en la base de datos 'Potencia\_Digital\_SQL', tabla 'dbo.ponentes', column 'idPonente'.]
-
-
-
-&nbsp;	
-
-
-
-
-
-
