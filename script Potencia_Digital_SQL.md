@@ -162,14 +162,15 @@ insert into ponentes\_charlas values
 
 &nbsp;	(1,8); -- 8 porque ya hice pruebas con filas anteriores que borré y tal y ahí se quedó el autocontador. Fila válida.
 
-&nbsp;	-- (1,1),  No válida, no existe idCharlas "1"
+&nbsp;	-- (1,1);  No válida, no existe idCharlas "1"
 
 -- \[Instrucción INSERT en conflicto con la restricción FOREIGN KEY 'FK\_idCharla2'. El conflicto ha aparecido en la base de datos 'Potencia\_Digital\_SQL', tabla 'dbo.charlas', column 'idCharlas'.]
 
 &nbsp;	(2,9),
 
-&nbsp;	(2,8),
+&nbsp;	(2,8);
 
 &nbsp;	-- (3,8); Error, no existe idPonente 3
 
 -- \[Instrucción INSERT en conflicto con la restricción FOREIGN KEY 'FK\_idPonente'. El conflicto ha aparecido en la base de datos 'Potencia\_Digital\_SQL', tabla 'dbo.ponentes', column 'idPonente'.]
+
