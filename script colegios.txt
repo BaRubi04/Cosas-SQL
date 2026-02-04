@@ -56,8 +56,9 @@ insert into colegios_actividades values
 insert into pruebas values
 	('delete from colegios where idColegio = 1;','En actividades_colegio, las filas con idColegio = 1 han sido eliminadas'),
 	('delete from charlas where idCharlas = 8;','No deja, porque hay una fila hija'),
-	('delete from charlas where idCharlas = 8;','Charlas del 14 febrero y 25 diciembre puestas a NULL'),
+	('delete from charlas where idCharlas = 8;','Charlas del 14 febrero y 25 diciembre puestas a NULL, la celda en color amarillo'),
 	('delete from colegios where idColegio = 2;','Las filas cuya charla iba a darse en el colegio 2 tienen dicho valor a 0');
+
 
 
 
