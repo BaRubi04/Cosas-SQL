@@ -16,7 +16,7 @@ create table colegios_actividades(
 	numero_asistentes smallint not null,
 	constraint FK_idColegio foreign key (idColegio) references colegios(idColegio)
 	on delete cascade, -- on delete set default
-	constraint FK_idCharlas foreign key (idCharla) references charlas(idCharlas)
+	constraint FK_idCharlas_colegios foreign key (idCharla) references charlas(idCharlas)
 	on delete no action -- on delete set null
 );
 
@@ -58,6 +58,7 @@ insert into pruebas values
 	('delete from charlas where idCharlas = 8;','No deja, porque hay una fila hija'),
 	('delete from charlas where idCharlas = 8;','Charlas del 14 febrero y 25 diciembre puestas a NULL, la celda en color amarillo'),
 	('delete from colegios where idColegio = 2;','Las filas cuya charla iba a darse en el colegio 2 tienen dicho valor a 0');
+
 
 
 
