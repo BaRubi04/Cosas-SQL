@@ -32,7 +32,7 @@ create table charlas(
 
  	constraint CK\_descripcion check(puntuacion\_media between 1 and 10)
 
- 	constraint FK\_idLugar foreign key (idLugar) references lugares(idLugar)
+ 	constraint FK\_idLugar_charlas foreign key (idLugar) references lugares(idLugar)
 
 );
 
@@ -64,9 +64,9 @@ create table asistencias(
 
  	primary key(idUsuario,idCharlas),
 
- 	constraint FK\_idUsuario foreign key (idUsuario) references usuarios(idUsuario),
+ 	constraint FK\_idUsuario_asistencias foreign key (idUsuario) references usuarios(idUsuario),
 
- 	constraint FK\_idCharlas foreign key (idCharlas) references charlas(idCharlas)
+ 	constraint FK\_idCharlas_asistencias foreign key (idCharlas) references charlas(idCharlas)
 
 );
 
@@ -80,7 +80,7 @@ create table fechas\_charlas(
 
  	primary key (idCharla,fecha),
 
- 	constraint FK\_idCharla foreign key (idCharla) references charlas(idCharlas),
+ 	constraint FK\_idCharla_fechas-charlas foreign key (idCharla) references charlas(idCharlas),
 
  	constraint FK\_fecha foreign key (fecha) references fechas(fecha)
 
@@ -94,9 +94,9 @@ create table ponentes\_charlas(
 
  	primary key(idPonente,idCharla),
 
- 	constraint FK\_idPonente foreign key (idPonente) references ponentes(idPonente),
+ 	constraint FK\_idPonente_ponentes-charlas foreign key (idPonente) references ponentes(idPonente),
 
- 	constraint FK\_idCharla2 foreign key (idCharla) references charlas(idCharlas)
+ 	constraint FK\_idCharla_ponentes-charlas foreign key (idCharla) references charlas(idCharlas)
 
 );
 
@@ -173,4 +173,5 @@ insert into ponentes\_charlas values
 &nbsp;	-- (3,8); Error, no existe idPonente 3
 
 -- \[Instrucción INSERT en conflicto con la restricción FOREIGN KEY 'FK\_idPonente'. El conflicto ha aparecido en la base de datos 'Potencia\_Digital\_SQL', tabla 'dbo.ponentes', column 'idPonente'.]
+
 
