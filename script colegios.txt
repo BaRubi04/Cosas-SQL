@@ -14,9 +14,9 @@ create table colegios_actividades(
 	idCharla smallint null,
 	fecha smalldatetime not null,
 	numero_asistentes smallint not null,
-	constraint FK_idColegio foreign key (idColegio) references colegios(idColegio)
+	constraint FK_idColegio_colegios-actividades foreign key (idColegio) references colegios(idColegio)
 	on delete cascade, -- on delete set default
-	constraint FK_idCharlas_colegios foreign key (idCharla) references charlas(idCharlas)
+	constraint FK_idCharlas_colegios-actividades foreign key (idCharla) references charlas(idCharlas)
 	on delete no action -- on delete set null
 );
 
@@ -58,6 +58,7 @@ insert into pruebas values
 	('delete from charlas where idCharlas = 8; (no action)','No deja, porque hay una fila hija'),
 	('delete from charlas where idCharlas = 8; (set NULL)','Charlas del 14 febrero y 25 diciembre puestas a NULL, la celda en color amarillo. Creo que no ha dado conflicto porque dicha charla no estaba siendo usada por otras tablas'),
 	('delete from colegios where idColegio = 2; (set default)','Las filas cuya charla iba a darse en el colegio 2 tienen dicho valor a 0');
+
 
 
 
