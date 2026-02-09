@@ -2,7 +2,7 @@ create table colegios(
 	idColegio smallint primary key,
 	nombre varchar(100) not null,
 	persona_contacto varchar(100) not null,
-	tfno_contacto char(10) unique
+	tfno_contacto char(10) unique not null
 );
 insert into colegios values
 	(0,'plazas disponibles','no procede','no procede');
@@ -56,4 +56,5 @@ insert into pruebas values
 	('delete from colegios where idColegio = 1; (cascade)','En actividades_colegio, las filas con idColegio = 1 han sido eliminadas'),
 	('delete from charlas where idCharlas = 8; (no action)','No deja, porque hay una fila hija'),
 	('delete from charlas where idCharlas = 8; (set NULL)','Charlas del 14 febrero y 25 diciembre puestas a NULL, la celda en color amarillo. Creo que no ha dado conflicto porque dicha charla no estaba siendo usada por otras tablas'),
+
 	('delete from colegios where idColegio = 2; (set default)','Las filas cuya charla iba a darse en el colegio 2 tienen dicho valor a 0');
