@@ -1,43 +1,63 @@
 body {
     font-family: 'Montserrat', sans-serif;
-    background-color: #f4f1ea;
-    background-image: radial-gradient(#ffffff, #eef596);
+    background-image: radial-gradient(#ffffff, #DDB274);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
     text-align: center;
+    margin: 0;
 }
 nav {
+    display: inline-block;
+    width:100%;
     text-align: center;
     margin-top: 20px;
-    background-color: white;
+    margin-bottom: 50px;
+    background-image: radial-gradient(#ffffff, #A9844B);
+    border-width: 5px;
+    border-style: solid;
+    border-radius: 15px;
+    border-color: #A9844B;
 }
-.envoltorio-principal {
-    width: 100%;
-    padding-top: 60px;
+nav a{
+    display:inherit;
+    padding: 20px;
+    margin: 20px;
+    text-decoration: none;
+    border-radius: 15px;
+    font-weight: bold;
+    color: #82343B;
 }
-.encabezado h1 {
-    color: #003358;
+nav a:hover{
+    transition: 0.3s;
+    background-color: #ffffff;
+}
+h1 {
+    color: #82343B;
     font-size: 32px;
     margin-bottom: 5px;
+    font-weight: bold;
 }
+h2 {
+    color: #82343B;
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
 .subtitulo {
     color: #666;
     font-size: 16px;
     margin-bottom: 40px;
 }
-.tarjeta-login {
+.tarjeta {
     background: #ffffff;
-    width: 400px;
+    width: 20%;
     margin: 0 auto;
     padding: 40px;
     border-radius: 15px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.05);
     text-align: left;
-}
-.tarjeta-login h2 {
-    color: #003358;
-    font-size: 18px;
-    text-align: center;
-    margin-bottom: 30px;
-    margin-top: 0px;
 }
 .grupo-formulario {
     margin-bottom: 20px;
@@ -76,13 +96,13 @@ nav {
     font-size: 13px;
 }
 .olvido a {
-    color: #003358;
+    color: #82343B;
     text-decoration: none;
 }
-.boton-enviar {
+button {
     display: block;
     width: 100%;
-    background-color: #003358;
+    background-color: #82343B;
     color: white;
     padding: 15px;
     border: none;
@@ -90,9 +110,16 @@ nav {
     font-weight: bold;
     font-family: 'Montserrat', sans-serif;
     letter-spacing: 1px;
-    cursor: pointer;
-    clear: both;
 }
-.boton-enviar:hover {
-    background-color: #002642;
+button:hover {
+    background-color: #61272c;
+}
+main button{
+    margin-top:50px;
+}
+#okPagina{
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
