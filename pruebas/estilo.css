@@ -1,0 +1,98 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f4f1ea;
+    background-image: radial-gradient(#ffffff, #eef596);
+    text-align: center;
+}
+nav {
+    text-align: center;
+    margin-top: 20px;
+    background-color: white;
+}
+.envoltorio-principal {
+    width: 100%;
+    padding-top: 60px;
+}
+.encabezado h1 {
+    color: #003358;
+    font-size: 32px;
+    margin-bottom: 5px;
+}
+.subtitulo {
+    color: #666;
+    font-size: 16px;
+    margin-bottom: 40px;
+}
+.tarjeta-login {
+    background: #ffffff;
+    width: 400px;
+    margin: 0 auto;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    text-align: left;
+}
+.tarjeta-login h2 {
+    color: #003358;
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 0px;
+}
+.grupo-formulario {
+    margin-bottom: 20px;
+}
+.grupo-formulario label {
+    display: block;
+    font-size: 13px;
+    color: #444;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+.contenedor-entrada {
+    position: relative;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    padding: 10px;
+}
+.contenedor-entrada input {
+    border: none;
+    outline: none;
+    width: 80%;
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+}
+.opciones-extra {
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+.recordar {
+    float: left;
+    font-size: 13px;
+    color: #666;
+}
+.olvido {
+    float: right;
+    font-size: 13px;
+}
+.olvido a {
+    color: #003358;
+    text-decoration: none;
+}
+.boton-enviar {
+    display: block;
+    width: 100%;
+    background-color: #003358;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1px;
+    cursor: pointer;
+    clear: both;
+}
+.boton-enviar:hover {
+    background-color: #002642;
+}
